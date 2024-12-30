@@ -20,12 +20,12 @@ connectDB();
 
 // Routes
 app.use('/api/auth', require('./routes/auth'));
-app.use('/api/products', require('./routes/product'));
+// app.use('/api/products', require('./routes/product'));
 
 // Start Server
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
-  console.log(`Frontend URL: ${corsOptions.origin}`);
+  // console.log(`Frontend URL: ${corsOptions.origin}`);
 });
 
 app.get("/", (req, res) => {
