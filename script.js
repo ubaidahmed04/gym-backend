@@ -10,7 +10,7 @@ require('dotenv').config();
 // Middleware
 app.use(express.json());
 const corsOptions = {
-  origin: ['http://localhost:3000', 'https://gymstore.vercel.app/'],
+  origin: 'https://gymstore.vercel.app',
   credentials: true,
 };
 app.use(cors(corsOptions));
