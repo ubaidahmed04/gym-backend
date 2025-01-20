@@ -9,10 +9,22 @@ const PORT = process.env.PORT || 5000;
 require('dotenv').config();
 // Middleware
 app.use(express.json());
+const allowedOrigins = [
+  'https://gymstore.vercel.app',
+  'http://localhost:3001',
+  'http://localhost:3000', // Add your development origin
+];
+
 const corsOptions = {
-  origin: 'https://gymstore.vercel.app',
-  credentials: true,
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
 };
+
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
 // Connect to MongoDB 
