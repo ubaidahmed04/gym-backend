@@ -5,12 +5,12 @@ const router = express.Router();
 // Register a Member
 router.post('/', async (req, res) => {
   try {
-    const { username, contact, phoneNo, email, dailyExercise, dailyDiet } = req.body;
+    const { username,  phoneNo, email, dailyExercise, dailyDiet } = req.body;
 
     // Check if all fields are provided
-    if (!username || !contact || !phoneNo || !email || !dailyExercise || !dailyDiet) {
+    if (!username ||  !phoneNo || !email || !dailyExercise || !dailyDiet) {
       return res.status(400).json({ 
-        message: 'All fields are required. Please provide username, contact, phoneNo, email, dailyExercise, and dailyDiet.' 
+        message: 'All fields are required. Please provide username,  phoneNo, email, dailyExercise, and dailyDiet.' 
       });
     }
 
@@ -23,7 +23,6 @@ router.post('/', async (req, res) => {
     // Create a new member
     const newMember = new Member({
       username,
-      contact,
       phoneNo,
       email,
       dailyExercise,
