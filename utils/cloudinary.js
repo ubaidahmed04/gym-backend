@@ -8,13 +8,12 @@ cloudinary.config({
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET
 });
-
 // Configure Cloudinary storage for Multer
 const storage = new CloudinaryStorage({
   cloudinary,
   params: {
     folder: 'products', // Folder in Cloudinary to store images
-    allowed_formats: ['jpg', 'jpeg', 'png'], // Allowed file types
+    allowed_formats: ['jpg', 'jpeg', 'png', 'webp'], // Allowed file types
   }
 });
 

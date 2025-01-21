@@ -34,6 +34,7 @@ connectDB();
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/products', require('./routes/product'));
 app.use('/api/members', require('./routes/memberRoutes'));
+app.use('/api/newProduct', require('./routes/newProduct'));
 // Start Server
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
